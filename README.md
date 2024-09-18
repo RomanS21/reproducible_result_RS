@@ -2,8 +2,11 @@
 Reproducible result for Roman Shantsila, PX915
 # Dependancy 
 For this workshop you will need access to Python, PyTorch, MACE and ASE
+
 Python  >= 3.7
+
 PyTorch >= 1.12
+
 
 
 Python:
@@ -15,18 +18,25 @@ ml GCCcore/11.3.0 Python/3.10.4
 MACE:
 
 MACE can be installed as directed here https://github.com/ACEsuit/mace
+
 Python  >= 3.7
+
 PyTorch >= 1.12
 
 Install PyTorch here https://pytorch.org/get-started/locally/
 
 For pip install of MACE run
+
 pip install --upgrade pip
+
 pip install mace-torch
 
 ASE:
+
 ASE 3.22.1 is recomended 
+
 For pip install run
+
 pip install ASE==3.22.1
 
 This tutotial will also use Python modules numpy, matplotlib, os, and random. These are assumed to be included with your loaded Python.
