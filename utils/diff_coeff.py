@@ -168,15 +168,16 @@ def plot_average_diff_coeff(dict_diff_coeff):
     y_full=[] # all diffusion constants, including repeats
     x = [] # temperatures examined, len(x) = len(y)
     x_full=[] # temperatures examined but 1 entry for each repeat at each entry, len(x_full) = len(y_full)
+    y_mat =[] # contains all diffusions constants but each temperature has its own entry
 
     # make 4 arrays, x arrays containt temperatures consistent to y and y_full values respectively
     for i in dict_diff_coeff:
         x.append(1000/int(i))
-        for j in range(len(dict_diff_coeff[i]):
+        for j in range(len(dict_diff_coeff[i])):
             x_full.append(1000/int(i))
             y_full.append(dict_diff_coeff[i][j])
         y.append(np.average(dict_diff_coeff[i]))
-    
+        y_mat.append(dict_diff_coeff[i])
 
     coefficients1,cov = np.polyfit(x_full, y_full, 1, cov=True)
     poly2 = np.poly1d(coefficients1)
@@ -184,10 +185,12 @@ def plot_average_diff_coeff(dict_diff_coeff):
     plt.plot(x, best_fit_line3,color = 'blue', linestyle='dotted')
 
 # Calculate mean and standard deviation
-y_std_devs = np.std(y_full, axis=1)
+    y_std_devs =[]
+    for i in y_mat:
+        y_std_devs.append(np.std(i))
 
 # Plot
-    plt.errorbar(x, y, yerr=y_std_devs, fmt='-o', capsize=5)
+    plt.errorbar(x, y, yerr=y_std_devs, fmt='o', capsize=5)
     plt.title('Mean Values with Error Bars at Different Temperatures')
 
 
