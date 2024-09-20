@@ -45,7 +45,7 @@ def write_frame():
             
 ## initialise the MD
 MaxwellBoltzmannDistribution(init_conf, temperature_K=float(temp))
-dyn = NPT(init_conf, externalstress=1., timestep =float(ts), ttime=float(tts), temperature_K=float(temp))
+dyn = NPT(init_conf, externalstress=1., timestep =float(ts)*units.fs, ttime=float(tts)*units.fs, temperature_K=float(temp))
 dyn.attach(write_frame, interval=1)
             
 ## run MD
