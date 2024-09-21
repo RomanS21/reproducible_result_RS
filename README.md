@@ -16,9 +16,10 @@ PyTorch >= 1.12
 
 Python:
 
-Python 3.10.4 was used on HetMathsys for the calculations to load this use
+Python 3.11.5 was used on HetMathsys for the calculations to load this use
 
-ml GCCcore/11.3.0 Python/3.10.4
+module purge
+ml GCCcore/13.2.0 Python/3.11.5 JupyterNotebook
 
 MACE:
 
@@ -26,7 +27,7 @@ MACE can be installed as directed here https://github.com/ACEsuit/mace
 
 Python  >= 3.7
 
-PyTorch >= 1.12
+PyTorch >= 1.12  version 2.2.0 was used in testing
 
 Install PyTorch here https://pytorch.org/get-started/locally/
 
@@ -43,6 +44,8 @@ ASE 3.22.1 is recomended
 For pip install run
 
 pip install ASE==3.22.1
+
+If errors occur that include modlue not found after going through installation try using pip3 install.
 
 This tutotial will also use Python modules numpy, matplotlib, os, and random. These are assumed to be included with your loaded Python.
 
